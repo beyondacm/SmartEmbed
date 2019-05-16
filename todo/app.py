@@ -1,5 +1,6 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+import pymysql
 import numpy as np
 import bug
 from clone_detect import Clone_Detect
@@ -14,6 +15,28 @@ clone_detect = Clone_Detect()
 
 class ReusableForm(Form):
     code = TextAreaField(render_kw={"rows": 40, "cols": 100},validators=[validators.required()])
+    
+class Database:
+    def __init__(self):
+        host = "localhost"
+        user = "phpmyadmin"
+        password = "Nipz@1994"
+        db = "phpmyadmin"
+        self.con = pymysql.connect(host=host, user=user, password=password, db=db, cursorclass=pymysql.cursors.
+                                   DictCursor,autocommit=True)
+        self.cur = self.con.cursor()
+        
+    def insert_bug(self,user,code,sl,el,bugtype,rate):
+        query = """INSERT INTO `bug` (user, code, sl,el,bugtype,rate) VALUES (%s, %s, %s, %s, %s, %s)"""
+        self.cur.execute(query, (str(user[1:-1]), str(code), str(sl),str(el),str(bugtype),str(rate)))
+        result = self.cur.fetchall()
+        return result
+    
+    def insert_clone(self,user,code,clone,sim,rate):
+        query = """INSERT INTO `clone` (user, code, clone,sim,rate) VALUES (%s, %s, %s, %s, %s)"""
+        self.cur.execute(query, (str(user[1:-1]), str(code), str(clone),str(sim),str(rate)))
+        result = self.cur.fetchall()
+        return result
 
 def cust_similarity(user_in):
     return clone_detect.get_similarity(user_in)
@@ -62,6 +85,26 @@ def test():
 @app.route('/about/')
 def about():
     return render_template('about.html',**locals())
+
+@app.route('/dbhandle_bug/', methods=['GET', 'POST'])
+def dbhandle_bug():
+    if request.method == 'GET':
+        def db_query():
+            db = Database()
+            emps = db.insert_bug(request.args['user'],request.args['code'],request.args['sl'],request.args['el'],request.args['bugtype'],request.args['rate'])
+            return emps
+        res = db_query()
+        return render_template('about.html',**locals())
+    
+@app.route('/dbhandle_clone/', methods=['GET', 'POST'])
+def dbhandle_clone():
+    if request.method == 'GET':
+        def db_query():
+            db = Database()
+            emps = db.insert_clone(request.args['user'],request.args['code'],request.args['clone'],request.args['sim'],request.args['rate'])
+            return emps
+        res = db_query()
+        return render_template('about.html',**locals())
 
 if __name__ =="__main__":
     app.run(debug=True,port=9700)
