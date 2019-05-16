@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title> SMARTEMBED </title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+      <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+      <script type=text/javascript>
+          window.js_startLines = {{ startLines }}; 
+          window.js_len_top_result = {{ len_top_result }}; 
+          window.js_top_bug = {{ top_bug }}; 
+          window.js_len_top_bug = {{ len_top_bug }}; 
+          window.js_bug_filter = js_top_bug; 
+    </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+      <script>
+          $(window).load(function() {
+              $(".se-pre-con").fadeOut("slow");;
+          });
+      </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta property="in_code" content="{{code}}" />
+      <div class="se-pre-con"></div>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">SMARTEMBED</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+      <br/>
+    <div class="footnote">This website was built with Python via the Flask framework by Vinoj Jayasundara</div>
+  </body>
+</html>

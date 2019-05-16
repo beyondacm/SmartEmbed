@@ -1,0 +1,17 @@
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:9700/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 194-819-681
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded

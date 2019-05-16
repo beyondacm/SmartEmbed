@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type=text/javascript src="{{url_for('static', filename='js/jquery.twbsPagination.min.js')}}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/pagination_clone.js')}}"></script>
+<!-- <div class='about'> -->
+<ul id="pagination-clone" class="pagination pull-right"></ul>
+<div class="page-container">
+   <div class="clone page" id="page1">
+      <p class="lead">In this article we teach you how to add pagination, an excellent way to navigate large amounts of content, to your website using a jQuery Bootstrap Plugin.</p>
+   </div>
+   <div class="clone page" id="page2">
+      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+   </div>
+   <div class="clone page" id="page3">
+      <p>This example is a quick exercise to illustrate how the default responsive navbar works. It's placed within a <code>.container</code> to limit its width and will scroll with the rest of the page's content.</p>
+   </div>
+   <div class="clone page" id="page4">
+      <p class="lead" style="-webkit-user-select: auto;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+   </div>
+   <div class="clone page" id="page5">
+      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+   </div>
+</div>
+<!-- </div> -->
+ {% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+    <h2>Please paste your smart contract here!</h2>
+    <div>
+        <form action="" method="post" role="form">
+            {{ form.csrf }}
+<!--         <div class="input text"> -->
+<!--                 {{ form.code.label }} {{ form.code }}</div> -->
+<!--             {{ form.code }}</div> -->
+<!--         <div class="input submit"> -->
+<!--                 <input type="submit" value="Submit"></div> -->
+        <div class="form-group">
+<!--             <input type="text" class="form-control" id="code" name="code" placeholder="Please paste your smart contract here!"> -->
+            <textarea class="form-control" rows="15" id="code" name="code" placeholder="Please paste your smart contract here!"></textarea>
+        </div>
+            <div class="text-center"> <button type="submit" class="btn btn-success">Submit</button> </div>
+        </form>
+        <br />
+          <div class="row">
+          <div class="column_sim">
+              <div class="alert alert-info"> 
+                  <strong> <div class="subtopic"> CLONE DETECTION RESULTS </div> </strong>
+                  <br/>
+                  <table style="width:100%">
+                      <tr>
+                      <th style="text-align:center">Contract URL <br/> <br/>  </th>
+                      <th style="text-align:center">Similarity Score <br/> <br/> </th>  
+                      </tr>
+                      {% for i in top_result %}
+                          <tr>
+                          <td><a href={{ i[0] }} target="_blank"> Top {{loop.index}} similarity </a> <br/> <br/></td>
+                          <td>{{ i[1] }} <br/> <br/>  </td>
+                          </tr>
+                      {% endfor %}
+                  </table>
+              </div>
+          </div>
+          <div class="column_bug">
+              <div class="alert alert-danger"> 
+                  <strong> <div class="subtopic"> BUG DETECTION RESULTS </div> </strong> 
+                  <br/>
+                  <table style="width:100%">
+                      <tr>
+                      <th style="text-align:center">Identified Bug <br/>  </th>
+                      <th style="text-align:center">Bug Type <br/>  </th>
+                      <th style="text-align:center">Rate our result! <br/> </th>  
+                      </tr>
+                      {% for i in top_result %}
+                          <tr>
+                          <td>From Line {{1*loop.index}} to Line {{2*loop.index}} </td>
+                          <td> Access </td>
+                          <td>
+                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                          <script type=text/javascript src="{{url_for('static', filename='js/star.js') }}"></script>
+                          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <div class="star-rating">
+                        <input type="radio" name="rating_{{loop.index}}" id="g_{{loop.index}}_1" value="5" onclick="g({{loop.index}},5)"><label for="g_{{loop.index}}_1"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                        <input type="radio" name="rating_{{loop.index}}" id="g_{{loop.index}}_2" value="4" onclick="g({{loop.index}},4)"><label for="g_{{loop.index}}_2"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                        <input type="radio" name="rating_{{loop.index}}" id="g_{{loop.index}}_3" value="3" onclick="g({{loop.index}},3)"><label for="g_{{loop.index}}_3"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                        <input type="radio" name="rating_{{loop.index}}" id="g_{{loop.index}}_4" value="2" onclick="g({{loop.index}},2)"><label for="g_{{loop.index}}_4"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                        <input type="radio" name="rating_{{loop.index}}" id="g_{{loop.index}}_5" value="1" onclick="g({{loop.index}},1)"><label for="g_{{loop.index}}_5"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                        </div>
+                          </td>
+                          </tr>
+                      {% endfor %}
+                  </table>
+                  <input type="text" class="form-control" id="disp" name="disp">
+              </div>    
+          </div>
+          </div> 
+        <br/>
+<!--         {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                    <ol>
+                    {% for message in messages %}
+                        {% if "Error" not in message[1]: %}
+                            <div class="alert alert-info">
+                                <li>{{ message[1] }}</li></div>
+                        {% endif %}
+ 
+                        {% if "Error" in message[1]: %}
+                            <div class="alert alert-warning">
+                                <li>{{ message[1] }}</li></div>
+                        {% endif %}
+                    {% endfor %}
+                    </ol>
+            {% endif %}
+        {% endwith %} -->
+      </div>
+  </div>
+{% endblock %}

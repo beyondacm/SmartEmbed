@@ -1,0 +1,18 @@
+### Dependencies for TextCaps			  	###
+###                                             ###
+### To install, run:                            ###
+###      $ pip install -r requirements.txt      ###
+###                                             ###
+###################################################
+
+## Install Flask ##
+Flask
+
+## Install WTForms ##
+WTForms
+
+## Install gensim ##
+gensim
+
+## Install SciPy ##
+scipy

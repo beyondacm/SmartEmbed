@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+/*
+ * Formatting the header area
+ */
+header {
+  background-color: #DFB887;
+  height: 50px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+header h1.logo {
+  margin: 0;
+  font-size: 2.5em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+  margin-top: 7px;
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*
+ * Centering the body content
+ */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+table,th,td{
+    vertical-align:center;
+    text-align:center;
+    padding: 5px;
+}
+
+th.lim{
+    text-align:center;
+    vertical-align:center;
+    word-wrap: break-word;
+    max-width: 250px;
+    padding: 5px;
+}
+td.lim{
+    text-align:left;
+    vertical-align:center;
+    word-wrap: break-word;
+    max-width: 250px;
+    padding: 5px;
+}
+
+/* div.mid{
+  text-align: center;
+} */
+
+div.home {
+  padding: 10px 10px 30px 10px;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+div.about {
+  padding: 10px 10px 30px 10px;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+div.column_sim{
+  float: left;
+  width: 38.25%;
+  margin: 10px 10px 10px 10px;
+}
+
+div.column_bug{
+  float: left;
+  width: 58.25%;
+  margin: 10px 10px 10px 10px;
+}
+
+
+div.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.subtopic{
+  text-align: center;
+  font-size: 16pt;
+  letter-spacing: 1px;
+}
+
+div.codeCmp {
+  padding: 2px 2px 2px 2px;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+h4 {
+  text-align: center;
+  font-size: 3em;
+  letter-spacing: 1px;
+}
+div.footnote {
+/*   margin: 0 auto; */
+/*   display: inline; */
+  text-align: center;
+  font-size: 8pt;
+  letter-spacing: 1px;
+}
+.menu {
+  font-size: 14pt;
+  float: right;
+  margin-top: 12px;
+}
+.menu a:hover{
+    color: #400;
+}
+
+.menu li {
+  display: inline;
+}
+.menu li + li {
+  margin-left: 35px;
+}
+.menu li a {
+  color: #444;
+  text-decoration: none;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding: 4px;
+}
+
+.star-rating input[type=radio] {
+    display: none
+}
+
+.star-rating label {
+    color: #bbb;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+    color: #f2b600
+}
+
+ /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+} 
+
+.tabcontent {
+  animation: fadeEffect 1s;
+}
+
+.checkboxes ul, .checkboxes li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.checkboxes li {
+    display:inline-block;
+    width:33.3333%;
+}
+
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.CodeMirror {
+    height: auto;
+}
+
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.page-container {
+  margin-top: 20px;
+}
+
+.page-clone {
+  display: none;
+}
+.page-active-clone {
+  display: block;
+}
+
+.page-bug {
+  display: none;
+}
+.page-active-bug {
+  display: block;
+}
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/loader-128x/Preloader_3.gif) center no-repeat #fff;
+}

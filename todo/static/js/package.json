@@ -1,0 +1,31 @@
+{
+    "name": "twbs-pagination",
+    "nativeName": "jQuery Bootstrap Pagination",
+    "version": "1.4.2",
+    "homepage": "https://github.com/josecebe/twbs-pagination",
+    "author": "Eugene Simakin <john-24@list.ru>",
+    "description": "jQuery simple pagination plugin for bootstrap-style webpages",
+    "main": "jquery.twbsPagination",
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+    "devDependencies": {
+        "grunt": "1.0.3",
+        "grunt-cli": "1.2.0",
+        "grunt-contrib-uglify": "3.3.0",
+        "grunt-contrib-watch": "1.1.0",
+        "load-grunt-tasks": "4.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/josecebe/twbs-pagination.git"
+    },
+    "keywords": [
+        "pagination",
+        "jQuery",
+        "jQuery-plugin",
+        "bootstrap"
+    ],
+    "license": "Apache-2.0",
+    "licenseUrl": "http://apache.org/licenses/LICENSE-2.0.html"
+}

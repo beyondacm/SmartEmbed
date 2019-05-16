@@ -1,0 +1,46 @@
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:9700/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 194-819-681
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:9700/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 194-819-681
+Statement FastText Model loaded
+contract fasttext_model loaded
+CONTRACT_EMBEDDING_MATRIX loaded
+sorted_contract_embeddings loaded
+Traceback (most recent call last):
+  File "/Users/zgao0013/Tool_Demo/todo/app.py", line 67, in <module>
+    app.run(debug=True,port=9700)
+  File "/Users/zgao0013/anaconda3/envs/py2/lib/python2.7/site-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/Users/zgao0013/anaconda3/envs/py2/lib/python2.7/site-packages/werkzeug/serving.py", line 988, in run_simple
+    run_with_reloader(inner, extra_files, reloader_interval, reloader_type)
+  File "/Users/zgao0013/anaconda3/envs/py2/lib/python2.7/site-packages/werkzeug/_reloader.py", line 326, in run_with_reloader
+    ensure_echo_on()
+  File "/Users/zgao0013/anaconda3/envs/py2/lib/python2.7/site-packages/werkzeug/_reloader.py", line 315, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')

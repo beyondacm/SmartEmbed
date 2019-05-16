@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type=text/javascript src="{{url_for('static', filename='js/jquery.twbsPagination.min.js')}}"></script>
+<script type=text/javascript src="{{url_for('static', filename='js/pagination_clone.js')}}"></script>
+<div class="home">
+  <h2>Please paste your smart contract here!</h2>
+  <div>
+  <script type=text/javascript src="{{url_for('static', filename='js/tab.js')}}"></script>
+  <script type=text/javascript src="{{url_for('static', filename='js/codemirror.js')}}"></script>
+  <script type=text/javascript src="{{url_for('static', filename='js/javascript.js')}}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/codemirror.css') }}">
+      <form action="" method="post" role="form">
+          {{ form.csrf }}
+          <div class="form-group">
+              <textarea class="form-control" rows="15" id="code" name="code" placeholder="Please paste your smart contract here!"></textarea>
+          </div>
+            <div class="alert alert-info">
+                  <h4>Please select the intended bug type to detect. No selection results in detecting all the bug types.</h4>
+                <table style="width:100%">
+                    <tr>
+                   <td class = "lim"><label class="checkbox-inline"><input type="checkbox" value="100" name='bug_select' id="selectall">All Bugs</label></td>
+                    </tr>
+                  <script type=text/javascript>
+                        $('#selectall').click(function() {
+                            $(this.form.elements).filter(':checkbox').prop('checked', this.checked);
+                        });
+                </script>                    
+                  {% for i in disp_bug %}
+                        {% if loop.index in [1,4,7,10] %} <tr> {% endif %}
+                            <td class = "lim"><label class="checkbox-inline"><input type="checkbox" value="{{loop.index}}" name='bug_select'>{{i[0]}}&nbsp;<font data-toggle="tooltip" data-placement="top" title= "{{i[1]}}" color="red">?</font></label></td>
+                        {% if loop.index in [3,6,9,12] %} </tr> {% endif %}
+                  {% endfor %}
+                </table>
+          </div>
+          <div class="text-center"> <button type="submit" class="btn btn-success">Submit</button> </div>
+       </form>
+       <br />
+      
+       <!-- The results are going to be displayed here-->
+       <div class="tab">
+       <script type=text/javascript src="{{url_for('static', filename='js/tab.js')}}"></script>
+           <button class="tablinks" onclick="openTab(event, 'clone')" id="goesFirst">CLONE DETECTION RESULTS</button>
+           <button class="tablinks" onclick="openTab(event, 'bug')">BUG DETECTION RESULTS</button>
+       </div>
+      <div class="tabcontent" id ="clone">
+          <div><ul id="pagination-clone" class="pagination pull-right"></ul></div> <br/><br/>
+            <div class="page-container">
+            {% for i in top_result %}
+                {% set sim = i[1] | round(4) %}
+                <div class="alert alert-success page-clone" id="clonepage{{loop.index}}"> 
+                      <table style="width:100%">
+                          <tr>
+                          <th class="lim" style="text-align:center">Your Contract </th>
+                          <th class="lim" style="text-align:center">Clone Contract</th>
+                          <th style="text-align:center">Contract URL </th>
+                          <th style="text-align:center">Similarity Score  </th>
+                          <th style="text-align:center">Rate our result!</th> 
+                          </tr>
+                              <tr>
+                              <td class="lim"> <div> <textarea class="cloneOur" rows="2" id="cloneOur{{loop.index}}">{{ code }}</textarea></div>  </td>
+                              <td class="lim"> <div> <textarea class="cloneTheir" rows="2" id="cloneTheir{{loop.index}}">{{ i[2] }}</textarea></div>  </td>
+                              <td><a href={{ i[0] }} target="_blank"> Top {{loop.index}} similarity </a> </td>
+                              <td>{{ i[1] | round(4)}} </td>
+                              <td>
+                              <script type=text/javascript src="{{url_for('static', filename='js/star_clone.js') }}"></script>
+                              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                            <div class="star-rating">
+                            <input type="radio" name="c_{{loop.index}}" id="c_{{loop.index}}_1" value="5" onclick="c({{i}},{{sim}},{{loop.index}},5)"><label for="c_{{loop.index}}_1"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="c_{{loop.index}}" id="c_{{loop.index}}_2" value="4" onclick="c({{i}},{{sim}},{{loop.index}},4)"><label for="c_{{loop.index}}_2"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="c_{{loop.index}}" id="c_{{loop.index}}_3" value="3" onclick="c({{i}},{{sim}},{{loop.index}},3)"><label for="c_{{loop.index}}_3"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="c_{{loop.index}}" id="c_{{loop.index}}_4" value="2" onclick="c({{i}},{{sim}},{{loop.index}},2)"><label for="c_{{loop.index}}_4"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="c_{{loop.index}}" id="c_{{loop.index}}_5" value="1" onclick="c({{i}},{{sim}},{{loop.index}},1)"><label for="c_{{loop.index}}_5"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            </div>
+                              </td>
+                              </tr>
+                      </table>                
+                </div>
+            {% endfor %}
+            </div>
+      </div>
+      <div class="tabcontent" id ="bug">
+            {% if len_top_bug==0 %}
+                <div class="alert alert-danger"> No {{bugs_as_strings}} bugs! </div>
+            {% endif %}
+          <div><ul id="pagination-bug" class="pagination pull-right"></ul></div> <br/><br/>
+           <div class="page-container"> 
+               {% for i in top_bug %}
+                   <div class="alert alert-danger page-bug" id="bugpage{{loop.index}}"> 
+                      <table style="width:100%">
+                          <tr>
+                          <th class="lim" style="text-align:center">Identified Bug </th>
+                          <th style="text-align:center">Bug Type  </th>
+                          <th style="text-align:center">Rate our result! </th>  
+                          </tr>
+                              <tr>
+                              <td class="lim"> <div> <textarea class="bugOur" rows="2" id="bugOur{{loop.index}}">{{ code }}</textarea></div>  </td>
+                              <td> {{disp_bug[i[2]|int][0]}} </td>                                
+                              <td>
+                              <script type=text/javascript src="{{url_for('static', filename='js/star_bug.js') }}"></script>
+                              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                            <div class="star-rating">
+                            <input type="radio" name="b_{{loop.index}}" id="b_{{loop.index}}_1" value="5" onclick="b({{i}},{{loop.index}},5)"><label for="b_{{loop.index}}_1"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="b_{{loop.index}}" id="b_{{loop.index}}_2" value="4" onclick="b({{i}},{{loop.index}},4)"><label for="b_{{loop.index}}_2"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="b_{{loop.index}}" id="b_{{loop.index}}_3" value="3" onclick="b({{i}},{{loop.index}},3)"><label for="b_{{loop.index}}_3"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="b_{{loop.index}}" id="b_{{loop.index}}_4" value="2" onclick="b({{i}},{{loop.index}},2)"><label for="b_{{loop.index}}_4"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            <input type="radio" name="b_{{loop.index}}" id="b_{{loop.index}}_5" value="1" onclick="b({{i}},{{loop.index}},1)"><label for="b_{{loop.index}}_5"><i class="active fa fa-star" aria-hidden="true"></i></label>
+                            </div>
+                              </td>
+                              </tr>
+                      </table>
+           </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+{% endblock %}
