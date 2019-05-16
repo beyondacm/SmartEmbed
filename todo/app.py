@@ -20,7 +20,7 @@ class Database:
     def __init__(self):
         host = "localhost"
         user = "phpmyadmin"
-        password = "Nipz@1994"
+        password = "passwd"
         db = "phpmyadmin"
         self.con = pymysql.connect(host=host, user=user, password=password, db=db, cursorclass=pymysql.cursors.
                                    DictCursor,autocommit=True)
