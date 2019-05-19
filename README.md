@@ -1,6 +1,17 @@
 # SmartEmbed Web Tool
 
+SmartEmbed is a web service tool for clone detection & bug detection for smart contracts.
+
+We have published our tool through the following url : 
+
+[http://www.smartembed.net/](http://www.smartembed.net/) 
+
+There is a tutorial video introducing how to use SmartEmbed on Youtube: 
+
+https://youtu.be/o9ylyOpYFq8
+
 ## Introduction
+
 This folder contains the code for the SmartEmbed web tool. There are a few important subfolders and files as follows.
 
 - **templates** - contains the frontend html files
@@ -29,9 +40,9 @@ vinojmh@smu.edu.sg
 Discussions, suggestions and questions are welcome!
 
 
-	
-	
-	
+​	
+​	
+​	
 
 
 
