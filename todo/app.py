@@ -19,9 +19,9 @@ class ReusableForm(Form):
 class Database:
     def __init__(self):
         host = "localhost"
-        user = "phpmyadmin"
-        password = "passwd"
-        db = "phpmyadmin"
+        user = "root"
+        password = "******"
+        db = "******"
         self.con = pymysql.connect(host=host, user=user, password=password, db=db, cursorclass=pymysql.cursors.
                                    DictCursor,autocommit=True)
         self.cur = self.con.cursor()
