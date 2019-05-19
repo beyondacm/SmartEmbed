@@ -10,6 +10,10 @@ There is a tutorial video introducing how to use SmartEmbed on Youtube:
 
 https://youtu.be/o9ylyOpYFq8
 
+Source data can be downloaded from : 
+
+https://drive.google.com/file/d/13iTTpt7gFd9wEW35C2fX4pVT7cVlHgxi/view?usp=sharing
+
 ## Introduction
 
 This folder contains the code for the SmartEmbed web tool. There are a few important subfolders and files as follows.
