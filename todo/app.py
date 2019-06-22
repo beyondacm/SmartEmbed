@@ -4,6 +4,7 @@ import pymysql
 import numpy as np
 import bug
 from clone_detect import Clone_Detect
+from gevent.pywsgi import WSGIServer
 
 # App config.
 DEBUG = True
@@ -20,8 +21,8 @@ class Database:
     def __init__(self):
         host = "localhost"
         user = "root"
-        password = "******"
-        db = "******"
+        password = "Qq332511"
+        db = "TESTDB"
         self.con = pymysql.connect(host=host, user=user, password=password, db=db, cursorclass=pymysql.cursors.
                                    DictCursor,autocommit=True)
         self.cur = self.con.cursor()
@@ -107,4 +108,6 @@ def dbhandle_clone():
         return render_template('about.html',**locals())
 
 if __name__ =="__main__":
-    app.run(debug=True,port=9000)
+    # app.run(debug=True,port=9000)
+    http_server = WSGIServer(('', 9000), app) 
+    http_server.serve_forever()
