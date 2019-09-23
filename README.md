@@ -1,6 +1,8 @@
 # SmartEmbed Web Tool
 
-SmartEmbed is a web service tool for clone detection & bug detection for smart contracts.
+SmartEmbed is a web service tool for clone detection & bug detection for smart contracts. 
+SmartEmbed has been published as a tool demo by on [ICSME-2019](https://icsme2019.github.io/), for details of the implementation please refer to our paper:
+https://arxiv.org/abs/1908.08615
 
 We have published our tool through the following url : 
 
