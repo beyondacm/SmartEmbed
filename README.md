@@ -2,20 +2,42 @@
 
 SmartEmbed is a web service tool for clone detection & bug detection for smart contracts. 
 
+Our full research paper: Checking smart contracts with structural code embeddings has been published on TSE (IEEE Transactions on Software Engineering), we describe the details for clone detection and bug detection in smart contracrs using SmartEmbed, for more details please refer to our research paper:   
+https://ieeexplore.ieee.org/document/8979435  
+https://arxiv.org/abs/2001.07125
+
 SmartEmbed has been published as a tool demo by on [ICSME-2019](https://icsme2019.github.io/), for details of the implementation please refer to our paper:
 https://arxiv.org/abs/1908.08615
 
 We have published our tool through the following url : 
-
 [http://www.smartembed.net/](http://www.smartembed.net/) 
 
 There is a tutorial video introducing how to use SmartEmbed on Youtube: 
-
 https://youtu.be/o9ylyOpYFq8
 
 Source data can be downloaded from : 
-
 https://drive.google.com/file/d/13iTTpt7gFd9wEW35C2fX4pVT7cVlHgxi/view?usp=sharing
+
+Please cite our work if you found our work is helpful:
+@article{gao2020checking,  
+  title={Checking Smart Contracts with Structural Code Embedding},  
+  author={Gao, Zhipeng and Jiang, Lingxiao and Xia, Xin and Lo, David and Grundy, John},  
+  journal={IEEE Transactions on Software Engineering},
+  year={2020},  
+  publisher={IEEE}  
+}
+
+@inproceedings{gao2019smartembed,  
+  title={Smartembed: A tool for clone and bug detection in smart contracts through structural code embedding},  
+  author={Gao, Zhipeng and Jayasundara, Vinoj and Jiang, Lingxiao and Xia, Xin and Lo, David and Grundy, John},  
+  booktitle={2019 IEEE International Conference on Software Maintenance and Evolution (ICSME)},  
+  pages={394--397},  
+  year={2019},  
+  organization={IEEE}  
+}
+
+
+
 
 ## Introduction
 
