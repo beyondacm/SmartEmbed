@@ -11,7 +11,6 @@ https://arxiv.org/abs/1908.08615
 
 We have published our tool through the following url:   
 [http://www.smartembed.tools/](http://www.smartembed.tools/)   
-~~[http://www.smartembed.net/](http://www.smartembed.net/)  
 
 
 There is a tutorial video introducing how to use SmartEmbed on Youtube:  
