@@ -10,7 +10,7 @@ SmartEmbed has been published as a tool demo by on [ICSME-2019](https://icsme201
 https://arxiv.org/abs/1908.08615
 
 We have published our tool through the following url:   
-[http://www.smartembed.tools/](http://www.smartembed.tools/)
+[http://www.smartembed.tools/](http://www.smartembed.tools/)   
 ~~[http://www.smartembed.net/](http://www.smartembed.net/)  
 
 
