@@ -68,7 +68,7 @@ This folder contains the code for the SmartEmbed web tool. There are a few impor
 ![image](https://drive.google.com/uc?export=view&id=1Mg9UOT99lql1XGBI_XQiVDrugbxbNmxn)
 
 ## Contact
-
+zhipeng.gao@monash.edu  
 vinojmh@smu.edu.sg  
 Discussions, suggestions and questions are welcome!
 
