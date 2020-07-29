@@ -53,10 +53,29 @@ This folder contains the code for the SmartEmbed web tool. There are a few impor
 - **similarity[dot]py** and **smart_embed[dot]py** - Contains the backend codes for clone detection. 
 - **bug[dot]py** and **smart_bug[dot]py** - Contains the backend codes for bug detection. 
 
+## Pretraied Models
+
+We have released the pre-trained model as described in the paper. You can use the following command to download our pretrained model:
+
+```shell
+pip install gdown  
+gdown https://drive.google.com/uc?id=1lbaQVtZbNuEEjHIWVnwLqGvILxNWwtZW  
+unzip Contract_Model.zip  
+mv Model SmartEmbed/contract_level/
+```
+
+```shell
+pip install gdown  
+gdown https://drive.google.com/uc?id=18GiDgSwoRjPC25d2Vp15oi_xH2NivyXH  
+unzip Statement_Model.zip 
+mv Model SmartEmbed/statement_level/  
+```
+
+
 ## Usage
 
 1. Install requirements.txt with ```pip install -r requirements.txt```.
-2. Please update the ```FASTTEXT_MODEL``` and ```CONTRACT_EMBEDDINGS_PATH``` to the corresponding ```work_space``` directory in the ```similarity.py``` lines ```10``` and ```19``` respectively.
+2. Please download the pretrained model with the aforementioned shell scripts. 
 3. Run the command ```python app.py``` . This will initialize the web tool at ```localhost:9700```, as illustrated below.
 
 ![image](https://drive.google.com/uc?export=view&id=1k87ZXIMvkGcToYUjAh1Mn0CyBkzmQoC4)
@@ -76,9 +95,4 @@ Discussions, suggestions and questions are welcome!
 ​	
 ​	
 ​	
-
-
-
-
-
 
