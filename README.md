@@ -97,7 +97,7 @@ mv Model SmartEmbed/statement_level/
 1. Install requirements.txt with ```pip install -r requirements.txt```.
 2. Clone this project to your local ```git clone https://github.com/beyondacm/SmartEmbed.git```.
 3. Please download the pretrained model with the aforementioned shell scripts. 
-4. Run the command ```python SmartEmbed/todo/app.py``` . This will initialize the web tool at ```localhost:9000```, as illustrated below.
+4. Change directory to ```cd SmartEmbed/todo/```, and Run the command ```python app.py``` . This will initialize the web tool at ```localhost:9000```, as illustrated below.
 
 ![image](https://drive.google.com/uc?export=view&id=1k87ZXIMvkGcToYUjAh1Mn0CyBkzmQoC4)
 
