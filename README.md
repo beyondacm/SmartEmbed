@@ -9,6 +9,10 @@ https://arxiv.org/abs/2001.07125
 SmartEmbed has been published as a tool demo by on [ICSME-2019](https://icsme2019.github.io/), for details of the implementation please refer to our paper:  
 https://arxiv.org/abs/1908.08615
 
+Our work: When Deep Learning Meets Smart Contracts has been accepted by ASE-2020 Student Research Competition track, for more details please refer to our paper:  
+http://arxiv.org/abs/2008.04093  
+
+
 We have published our tool through the following url:   
 [http://www.smartembed.tools/](http://www.smartembed.tools/)   
 
@@ -41,6 +45,14 @@ Please cite our work if you found our work is helpful:
 }
 
 
+*When Deep Learning Meets Smart Contracts*
+> @article{gao2020deep,  
+  title={When Deep Learning Meets Smart Contracts},  
+  author={Gao, Zhipeng},   
+  journal={arXiv preprint arXiv:2008.04093},  
+  year={2020}    
+}
+
 
 
 ## Introduction
@@ -56,6 +68,14 @@ This folder contains the code for the SmartEmbed web tool. There are a few impor
 ## Pretraied Models
 
 We have released the pre-trained model as described in the paper. You can use the following command to download our pretrained model:
+
+```shell
+pip install gdown
+gdown https://drive.google.com/uc?id=1-LKJTZakqd8ntKzqVNtQZUgdZnFoYtpK
+unzip Contract_Embedding.zip
+mv Embedding SmartEmbed/contract_level/
+```  
+
 
 ```shell
 pip install gdown  
@@ -75,15 +95,16 @@ mv Model SmartEmbed/statement_level/
 ## Usage
 
 1. Install requirements.txt with ```pip install -r requirements.txt```.
-2. Please download the pretrained model with the aforementioned shell scripts. 
-3. Run the command ```python app.py``` . This will initialize the web tool at ```localhost:9700```, as illustrated below.
+2. Clone this project to your local ```git clone https://github.com/beyondacm/SmartEmbed.git```.
+3. Please download the pretrained model with the aforementioned shell scripts. 
+4. Run the command ```python SmartEmbed/todo/app.py``` . This will initialize the web tool at ```localhost:9000```, as illustrated below.
 
 ![image](https://drive.google.com/uc?export=view&id=1k87ZXIMvkGcToYUjAh1Mn0CyBkzmQoC4)
 
-4. Paste the smart contract on to the text area and hit *Submit*.
-5. Clone detection results will be displayed as follows.
+5. Paste the smart contract on to the text area and hit *Submit*.
+6. Clone detection results will be displayed as follows.
 ![image](https://drive.google.com/uc?export=view&id=1iNfJdYrjdByUJqB5DRsCg-IaaYmsL5gK)
-6. Bug detection results will be displayed as follows.
+7. Bug detection results will be displayed as follows.
 ![image](https://drive.google.com/uc?export=view&id=1Mg9UOT99lql1XGBI_XQiVDrugbxbNmxn)
 
 ## Contact
