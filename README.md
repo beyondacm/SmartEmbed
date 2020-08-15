@@ -73,7 +73,7 @@ We have released the pre-trained model as described in the paper. You can use th
 pip install gdown
 gdown https://drive.google.com/uc?id=1-LKJTZakqd8ntKzqVNtQZUgdZnFoYtpK
 unzip Contract_Embedding.zip
-mv Embedding SmartEmbed/contract_level/
+cp -r Embedding/ SmartEmbed/contract_level/
 ```  
 
 
