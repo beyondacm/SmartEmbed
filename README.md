@@ -1,6 +1,7 @@
 # SmartEmbed Web Tool
 
-SmartEmbed is a web service tool for clone detection & bug detection for smart contracts. 
+SmartEmbed is a web service tool for clone detection & bug detection for smart contracts. **We have newly added the [interface of using smartembed](#smartembed-interface-usage
+) for estimating similarities between different smart contracts, please feel free to have a try! :) Any questions and feedback are very welcome.** 
 
 Our full research paper: Checking smart contracts with structural code embeddings has been published on TSE (IEEE Transactions on Software Engineering), we describe the details for clone detection and bug detection in smart contracrs using SmartEmbed, for more details please refer to our research paper:   
 https://ieeexplore.ieee.org/document/8979435  
@@ -92,7 +93,7 @@ mv Model SmartEmbed/statement_level/
 ```
 
 
-## Usage
+## SmartEmbed Web Tool Setup and Usage
 
 1. Install requirements.txt with ```pip install -r requirements.txt```.
 2. Clone this project to your local ```git clone https://github.com/beyondacm/SmartEmbed.git```.
