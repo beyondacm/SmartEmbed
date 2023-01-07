@@ -98,14 +98,33 @@ mv Model SmartEmbed/statement_level/
 2. Clone this project to your local ```git clone https://github.com/beyondacm/SmartEmbed.git```.
 3. Please download the pretrained model with the aforementioned shell scripts. 
 4. Change directory to ```cd SmartEmbed/todo/```, and Run the command ```python app.py``` . This will initialize the web tool at ```localhost:9000```, as illustrated below.
-
 ![image](https://drive.google.com/uc?export=view&id=1k87ZXIMvkGcToYUjAh1Mn0CyBkzmQoC4)
-
 5. Paste the smart contract on to the text area and hit *Submit*.
 6. Clone detection results will be displayed as follows.
 ![image](https://drive.google.com/uc?export=view&id=1iNfJdYrjdByUJqB5DRsCg-IaaYmsL5gK)
 7. Bug detection results will be displayed as follows.
 ![image](https://drive.google.com/uc?export=view&id=1Mg9UOT99lql1XGBI_XQiVDrugbxbNmxn)
+
+
+## SmartEmbed Interface Usage
+You can easily use smartembed tool to estimate the similarity between two smart contracts, the following code snippet gives an example: 
+
+```python
+from smartembed import SmartEmbed
+
+se = SmartEmbed()
+# read contract1 from file
+contract1 = open('./todo/test.sol', 'r').read() 
+# get vector representation for contract1
+vector1 = se.get_vector(contract1)
+# read contract2 from file
+contract2 = open('./todo/KOTH.sol', 'r').read()
+# get vector representation for contract2
+vector2 = se.get_vector(contract2)
+# estimate similarity between contract1 and contract2 
+similarity = se.get_similarity(vector1, vector2)
+print("similarity between c1 and c2:", similarity)
+```
 
 ## Contact
 zhipeng.gao@monash.edu  
