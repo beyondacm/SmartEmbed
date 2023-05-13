@@ -128,7 +128,7 @@ print("similarity between c1 and c2:", similarity)
 ```
 
 ## Contact
-zhipeng.gao@monash.edu  
+zhipeng.gao@zju.edu.cn
 vinojmh@smu.edu.sg  
 Discussions, suggestions and questions are welcome!
 
